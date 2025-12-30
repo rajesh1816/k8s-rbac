@@ -5,7 +5,7 @@ metadata:
   name: pod-reader
 rules:
 - apiGroups: [""] # "" indicates the core API group
-  resources: ["pods"]
+  resources: ["pods/exec"]
   verbs: ["get","list","create","update"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
