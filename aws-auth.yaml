@@ -14,7 +14,7 @@ data:
     - userarn: aarn:aws:iam::887363634632:user/Rajesh
       username: Rajesh 
       groups:
-        - rajesh-trainee
+        - roboshop-trainee
 
 
 
