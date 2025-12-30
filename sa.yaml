@@ -15,5 +15,5 @@ spec:
   serviceAccountName: roboshop-ssm-sa
   containers:
     - name: app
-      image: amazonlinux
+      image: amazon/aws-cli
       command: ["sleep", "10000"]
