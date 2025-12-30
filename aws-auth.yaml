@@ -11,7 +11,7 @@ data:
       - system:nodes
       username: system:node:{{EC2PrivateDNSName}}
   mapUsers: |
-    - userarn: aarn:aws:iam::887363634632:user/Rajesh
+    - userarn: arn:aws:iam::887363634632:user/Rajesh
       username: Rajesh 
       groups:
         - roboshop-trainee
