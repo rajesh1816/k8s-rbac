@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: roboshop-ssm-sa       # ServiceAccount name
+  namespace: roboshop         # Namespace where pod will run
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::887363634632:role/PodSSMreadpolicyrole
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: roboshop-pod
+  namespace: roboshop
+spec:
+  serviceAccountName: roboshop-ssm-sa
+  containers:
+    - name: app
+      image: amazonlinux
+      command: ["sleep", "10000"]
