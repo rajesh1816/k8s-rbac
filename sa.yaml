@@ -9,11 +9,11 @@ metadata:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: roboshop-pod
+  name: secret-reader-pod
   namespace: roboshop
 spec:
   serviceAccountName: roboshop-ssm-sa
   containers:
-    - name: app
+    - name: secret-reader
       image: amazon/aws-cli
       command: ["sleep", "10000"]
