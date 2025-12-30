@@ -1,0 +1,23 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: roboshop
+  name: pod-reader
+rules:
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["pods", "service"]
+  verbs: ["get","list"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: read-pods-binding
+  namespace: roboshop
+subjects:
+- kind: User # Could also be Group or ServiceAccount
+  name: Rajesh # Name of the user, case sensitive
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role # Must match the kind of the role being bound
+  name: pod-reader # Name of the Role or ClusterRole being referenced
+  apiGroup: rbac.authorization.k8s.io
